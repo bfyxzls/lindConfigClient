@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
   @Value("${server.port}") // git配置文件里的key
-      String myww;
+      String serverPort;
 
   @RequestMapping("/")
   public String index() {
-    return "myww=" + myww;
+    return "serverPort=" + serverPort;
   }
 }
