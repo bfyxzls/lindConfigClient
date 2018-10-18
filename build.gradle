@@ -3,7 +3,8 @@ buildscript {
         springBootVersion = '2.0.2.RELEASE'
     }
     repositories {
-        mavenCentral()
+        mavenLocal()
+
         maven {
             name "aliyun1"
             url 'http://maven.aliyun.com/nexus/content/groups/public'
@@ -24,6 +25,7 @@ buildscript {
             name "spring snapshot"
             url "https://repo.spring.io/snapshot"
         }
+        mavenCentral()
 
     }
     dependencies {
@@ -41,7 +43,8 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    mavenLocal()
+
     maven {
         name "aliyun1"
         url 'http://maven.aliyun.com/nexus/content/groups/public'
@@ -62,6 +65,7 @@ repositories {
         name "spring snapshot"
         url "https://repo.spring.io/snapshot"
     }
+    mavenCentral()
 }
 
 
@@ -72,7 +76,10 @@ ext {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web',
             'org.springframework.cloud:spring-cloud-starter-config',
-            'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+            'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+                    )
+    compileOnly('org.projectlombok:lombok')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

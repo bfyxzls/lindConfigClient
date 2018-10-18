@@ -2,6 +2,7 @@ package lind.springdemo.config.clientshop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,5 +17,10 @@ public class HomeController {
   public String index(@RequestParam String key) {
 
     return key + "=" + profile.getProperty(key);
+  }
+
+  @GetMapping("/home")
+  public String hello() {
+    return "hello world!";
   }
 }
